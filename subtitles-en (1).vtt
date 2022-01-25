@@ -1,0 +1,415 @@
+WEBVTT
+
+1
+00:00:07.450 --> 00:00:13.700
+In part one of this two-part series, we’ll
+cover data management, open source data integration,
+
+2
+00:00:13.700 --> 00:00:16.920
+transformation, and visualization tools.
+
+3
+00:00:16.920 --> 00:00:22.820
+The most widely used open source data management
+tools are relational databases such as
+
+4
+00:00:22.820 --> 00:00:32.739
+MySQL and PostgreSQL; NoSQL databases such
+as MongoDB Apache CouchDB, and Apache Cassandra;
+
+5
+00:00:32.739 --> 00:00:40.370
+and file-based tools such as the Hadoop File
+System or Cloud File systems like Ceph.
+
+6
+00:00:40.370 --> 00:00:45.970
+Finally,Elasticsearch is mainly used for storing
+text data and creating a search index for
+
+7
+00:00:45.970 --> 00:00:48.190
+fast document retrieval.
+
+8
+00:00:48.190 --> 00:00:53.790
+The task of data integration and transformation
+in the classic data warehousing world is called
+
+9
+00:00:53.790 --> 00:00:59.100
+ETL, which stands for “extract, transform,
+and load.”
+
+10
+00:00:59.100 --> 00:01:06.520
+These days, data scientists often propose
+the term “ELT” – Extract, Load, Transform“ELT”,
+
+11
+00:01:06.520 --> 00:01:12.450
+stressing the fact that data is dumped somewhere
+and the data engineer or data scientist themself
+
+12
+00:01:12.450 --> 00:01:14.950
+is responsible for data.
+
+13
+00:01:14.950 --> 00:01:20.609
+Another term for this process has now emerged:
+“data refinery and cleansing.”
+
+14
+00:01:20.609 --> 00:01:26.600
+Here are the most widely used open source
+data integration and transformation tools:
+
+15
+00:01:26.600 --> 00:01:33.439
+Apache AirFlow, originally created by AirBNB;
+KubeFlow, which enables you to execute data
+
+16
+00:01:33.439 --> 00:01:40.460
+science pipelines on top of Kubernetes; Apache
+Kafka, which originated from LinkedIn;
+
+17
+00:01:40.460 --> 00:01:44.619
+Apache Nifi, which delivers a very nice visual
+editor;
+
+18
+00:01:44.619 --> 00:01:50.920
+Apache SparkSQL (which enables you to use
+ANSI SQL and scales up to compute clusters
+
+19
+00:01:50.920 --> 00:01:56.970
+of 1000s of nodes), and NodeRED, which also
+provides a visual editor.
+
+20
+00:01:56.970 --> 00:02:02.640
+NodeRED consumes so little in resources that
+it even runs on small devices like a Raspberry
+
+21
+00:02:02.640 --> 00:02:03.709
+Pi.
+
+22
+00:02:03.709 --> 00:02:09.759
+We’ll now introduce the most widely used
+open source data visualization tools.
+
+23
+00:02:09.759 --> 00:02:14.900
+We have to distinguish between programming
+libraries where you need to use code and tools
+
+24
+00:02:14.900 --> 00:02:17.310
+that contain a user interface.
+
+25
+00:02:17.310 --> 00:02:20.810
+The most popular libraries are covered in
+the next videos.
+
+26
+00:02:20.810 --> 00:02:28.010
+A similar approach uses Hue, which can create
+visualizations from SQL queries.
+
+27
+00:02:28.010 --> 00:02:34.340
+Kibana, a data exploration and visualization
+web application, is limited to Elasticsearch
+
+28
+00:02:34.340 --> 00:02:35.750
+(the data provider).
+
+29
+00:02:35.750 --> 00:02:42.689
+Finally, Apache Superset is a data exploration
+and visualization web application.
+
+30
+00:02:42.689 --> 00:02:45.489
+Model deployment is extremely important.
+
+31
+00:02:45.489 --> 00:02:49.870
+Once you’ve created a machine learning model
+capable of predicting some key aspects of
+
+32
+00:02:49.870 --> 00:02:57.280
+the future, you should make that model consumable
+by other developers and turn it into an API.
+
+33
+00:02:57.280 --> 00:03:03.480
+Apache PredictionIO currently only supports
+Apache Spark ML models for deployment, but
+
+34
+00:03:03.480 --> 00:03:07.609
+support for all sorts of other libraries is
+on the roadmap.
+
+35
+00:03:07.609 --> 00:03:12.409
+Seldon is an interesting product since it
+supports nearly every framework, including
+
+36
+00:03:12.409 --> 00:03:17.980
+TensorFlow, Apache SparkML, R, and scikit-learn.
+
+37
+00:03:17.980 --> 00:03:22.720
+Seldon can run on top of Kubernetes and Redhat
+OpenShift.
+
+38
+00:03:22.720 --> 00:03:26.950
+Another way to deploy SparkML models is by
+using MLeap.
+
+39
+00:03:26.950 --> 00:03:32.959
+Finally, TensorFlow can serve any of its models
+using the TensorFlow service.
+
+40
+00:03:32.959 --> 00:03:38.260
+You can deploy to an embedded device like
+a Raspberry Pi or a smartphone using TensorFlow
+
+41
+00:03:38.260 --> 00:03:44.840
+Lite, and even deploy to a web browser using
+TensorFlow dot JS.
+
+42
+00:03:44.840 --> 00:03:47.810
+Model monitoring is another crucial step.
+
+43
+00:03:47.810 --> 00:03:52.050
+Once you’ve deployed a machine learning
+model, you need to keep track of its prediction
+
+44
+00:03:52.050 --> 00:03:57.110
+performance as new data arrives in order to
+maintain outdated models.
+
+45
+00:03:57.110 --> 00:04:02.159
+Following are some examples of model monitoring
+tools:
+
+46
+00:04:02.159 --> 00:04:08.770
+ModelDB is a machine model metadatabase where
+information about the models are stored and
+
+47
+00:04:08.770 --> 00:04:10.230
+can be queried.
+
+48
+00:04:10.230 --> 00:04:15.730
+It natively supports Apache Spark ML Pipelines
+and scikit-learn.
+
+49
+00:04:15.730 --> 00:04:21.920
+A generic, multi-purpose tool called Prometheus
+is also widely used for machine learning model
+
+50
+00:04:21.920 --> 00:04:27.540
+monitoring, although it’s not specifically
+made for this purpose.
+
+51
+00:04:27.540 --> 00:04:31.850
+Model performance is not exclusively measured
+through accuracy.
+
+52
+00:04:31.850 --> 00:04:37.350
+Model bias against protected groups like gender
+or race is also important.
+
+53
+00:04:37.350 --> 00:04:43.030
+The IBM AI Fairness 360 open source toolkit
+does exactly this.
+
+54
+00:04:43.030 --> 00:04:49.570
+It detects and mitigates against bias in machine
+learning models.
+
+55
+00:04:49.570 --> 00:04:55.730
+Machine learning models, especially neural-network-based
+deep learning models, can be subject to adversarial
+
+56
+00:04:55.730 --> 00:05:01.780
+attacks, where an attacker tries to fool the
+model with manipulated data or by manipulating
+
+57
+00:05:01.780 --> 00:05:03.670
+the model itself.
+
+58
+00:05:03.670 --> 00:05:07.640
+The
+IBM Adversarial Robustness 360 Toolbox can
+
+59
+00:05:07.640 --> 00:05:15.230
+be used to detect vulnerability to adversarial
+attacks and help make the model more robust.
+
+60
+00:05:15.230 --> 00:05:20.260
+Machine learning modes are often considered
+to be a black box that applies some mysterious
+
+61
+00:05:20.260 --> 00:05:21.260
+“magic.”
+
+62
+00:05:21.260 --> 00:05:25.470
+The IBM AI Explainability 360 Toolkit makes
+the
+
+63
+00:05:25.470 --> 00:05:31.170
+machine learning process more understandable
+by finding similar examples within a dataset
+
+64
+00:05:31.170 --> 00:05:34.710
+that can be presented to a user for manual
+comparison.
+
+65
+00:05:34.710 --> 00:05:41.700
+The IBM AI Explainability 360 Toolkit can
+also illustrate training for a simpler machine
+
+66
+00:05:41.700 --> 00:05:46.930
+learning model by explaining how different
+input variables affect the final decision
+
+67
+00:05:46.930 --> 00:05:48.370
+of the model.
+
+68
+00:05:48.370 --> 00:05:52.830
+Options for code asset management tools have
+been greatly simplified:
+
+69
+00:05:52.830 --> 00:05:58.340
+For code asset management – also referred
+to as version management or version control
+
+70
+00:05:58.340 --> 00:06:01.760
+– Git is now the standard.
+
+71
+00:06:01.760 --> 00:06:07.310
+Multiple services have emerged to support
+Git, with the most prominent being GitHub,
+
+72
+00:06:07.310 --> 00:06:11.260
+which provides hosting for software development
+version management.
+
+73
+00:06:11.260 --> 00:06:16.280
+The runner-up is definitely GitLab, which
+has the advantage of being a fully open source
+
+74
+00:06:16.280 --> 00:06:19.910
+platform that you can host and manage yourself.
+
+75
+00:06:19.910 --> 00:06:23.850
+Another choice is Bitbucket.
+
+76
+00:06:23.850 --> 00:06:29.610
+Data asset management, also known as data
+governance or data lineage, is another crucial
+
+77
+00:06:29.610 --> 00:06:33.050
+part of enterprise grade data science.
+
+78
+00:06:33.050 --> 00:06:36.970
+Data has to be versioned and annotated with
+metadata.
+
+79
+00:06:36.970 --> 00:06:41.120
+Apache Atlas is a tool that supports this
+task.
+
+80
+00:06:41.120 --> 00:06:46.900
+Another interesting project, ODPi Egeria,
+is managed through the Linux Foundation and
+
+81
+00:06:46.900 --> 00:06:49.650
+is an open ecosystem.
+
+82
+00:06:49.650 --> 00:06:56.350
+It offers a set of open APIs, types, and interchange
+protocols that metadata repositories use to
+
+83
+00:06:56.350 --> 00:06:58.910
+share and exchange data.
+
+84
+00:06:58.910 --> 00:07:04.820
+Finally, Kylo is an open source data lake
+management software platform that provides
+
+85
+00:07:04.820 --> 00:07:10.440
+extensive support for a wide range of data
+asset management tasks.
+
+86
+00:07:10.440 --> 00:07:12.940
+This concludes part one of this two-part series.
+
+87
+00:07:12.940 --> 00:07:15.090
+Now let’s move on to part two.
